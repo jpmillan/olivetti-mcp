@@ -1,0 +1,22 @@
+issue_type: Story
+default_priority: Medium
+required_fields:
+  - summary
+  - description
+  - acceptance_criteria
+  - story_points
+field_labels:
+  - story
+description_template: |
+  ## Summary
+  {description}
+
+  ## Background
+  {background}
+
+  ## Acceptance Criteria
+  {acceptance_criteria}
+
+  ## Out of Scope
+  {out_of_scope}
+story_points_options: [1, 2, 3, 5, 8, 13]

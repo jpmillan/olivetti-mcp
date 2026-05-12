@@ -1,0 +1,20 @@
+issue_type: Bug
+default_priority: High
+required_fields:
+  - summary
+  - description
+field_labels:
+  - bug
+  - triage
+description_template: |
+  ## Bug Description
+  {description}
+
+  ## Steps to Reproduce
+  {background}
+
+  ## Expected Behaviour
+  {acceptance_criteria}
+
+  ## Out of Scope
+  {out_of_scope}

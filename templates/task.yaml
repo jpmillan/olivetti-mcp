@@ -1,0 +1,19 @@
+issue_type: Task
+default_priority: Medium
+required_fields:
+  - summary
+  - description
+field_labels:
+  - task
+description_template: |
+  ## Task Description
+  {description}
+
+  ## Background
+  {background}
+
+  ## Acceptance Criteria
+  {acceptance_criteria}
+
+  ## Out of Scope
+  {out_of_scope}
