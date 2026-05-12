@@ -1,0 +1,24 @@
+# Binaries
+olivetti-mcp
+olivetti-mcp.exe
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Environment (contains secrets)
+.env
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test output
+coverage.out
