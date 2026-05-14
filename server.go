@@ -44,6 +44,9 @@ func registerTools(s *server.MCPServer, provider ticket.Provider, loader *jira.T
 		mcp.WithNumber("story_points",
 			mcp.Description("Story point estimate (for stories: 1, 2, 3, 5, 8, 13)"),
 		),
+		mcp.WithString("project_key",
+			mcp.Description("Jira project key (e.g. DEV, PROJ). Overrides the default configured via JIRA_PROJECT_KEY"),
+		),
 	)
 
 	s.AddTool(tool, createTicketHandler(provider, loader))
@@ -61,6 +64,7 @@ func createTicketHandler(provider ticket.Provider, loader *jira.TemplateLoader) 
 		background, _ := args["background"].(string)
 		outOfScope, _ := args["out_of_scope"].(string)
 		priority, _ := args["priority"].(string)
+		projectKey, _ := args["project_key"].(string)
 
 		var storyPoints *int
 		if sp, ok := args["story_points"].(float64); ok {
@@ -110,6 +114,7 @@ func createTicketHandler(provider ticket.Provider, loader *jira.TemplateLoader) 
 
 		// Create the ticket via the configured provider.
 		resp, err := provider.CreateTicket(ctx, ticket.CreateRequest{
+			ProjectKey:  projectKey,
 			Summary:     summary,
 			IssueType:   tmpl.IssueType,
 			Description: renderedDescription,

@@ -102,9 +102,14 @@ func (c *Client) buildPayload(req ticket.CreateRequest) map[string]any {
 		},
 	}
 
+	projectKey := c.projectKey
+	if req.ProjectKey != "" {
+		projectKey = req.ProjectKey
+	}
+
 	fields := map[string]any{
 		"project": map[string]string{
-			"key": c.projectKey,
+			"key": projectKey,
 		},
 		"summary": req.Summary,
 		"issuetype": map[string]string{

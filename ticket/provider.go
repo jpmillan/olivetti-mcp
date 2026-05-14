@@ -15,6 +15,7 @@ type Provider interface {
 
 // CreateRequest holds the provider-agnostic fields for creating a ticket.
 type CreateRequest struct {
+	ProjectKey  string
 	Summary     string
 	IssueType   string
 	Description string

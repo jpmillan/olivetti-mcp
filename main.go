@@ -18,7 +18,7 @@ func main() {
 	baseURL := requireEnv("JIRA_BASE_URL")
 	email := requireEnv("JIRA_EMAIL")
 	apiToken := requireEnv("JIRA_API_TOKEN")
-	projectKey := requireEnv("JIRA_PROJECT_KEY")
+	projectKey := getEnv("JIRA_PROJECT_KEY", "")
 	templatesDir := getEnv("TEMPLATES_DIR", "./templates")
 
 	// Load YAML issue templates from disk.
