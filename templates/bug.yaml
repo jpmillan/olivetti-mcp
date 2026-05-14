@@ -7,14 +7,55 @@ field_labels:
   - bug
   - triage
 description_template: |
-  ## Bug Description
+  ## 🧾 Summary
+
   {description}
 
-  ## Steps to Reproduce
-  {background}
+  ## 📍 Environment
 
-  ## Expected Behaviour
-  {acceptance_criteria}
+  {environment}
 
-  ## Out of Scope
-  {out_of_scope}
+  ## 🚨 Bug Description
+
+  {bug_description}
+
+  ## 🔁 Steps to Reproduce
+
+  {steps_to_reproduce}
+
+  ## ✅ Expected Result
+
+  {expected_result}
+
+  ## ❌ Actual Result
+
+  {actual_result}
+
+  ## 📸 Evidence
+
+  {evidence}
+
+  ## 🔎 Impact Assessment
+
+  {impact_assessment}
+
+  ## 🔗 Related Information
+
+  {dependencies}
+
+  ## 🧪 Testing Notes (After Fix)
+
+  {testing_notes}
+
+  ## 🏁 Definition of Done
+
+  - [ ] Root cause is identified and documented (where required)
+  - [ ] Fix is implemented and peer reviewed
+  - [ ] Code is merged and builds successfully
+  - [ ] Tests are updated/added where applicable and passing (Unit/Functional)
+  - [ ] Defect is retested and no longer reproducible
+  - [ ] No regression issues introduced (validated via relevant testing)
+  - [ ] Deployed to the agreed environment and verified by QA/Tester
+  - [ ] Accepted/closed by Product Owner or Delegate (if required)
+  - [ ] Documentation/configuration updated where required
+  - [ ] Deployed to Production (if applicable) and PVT passed

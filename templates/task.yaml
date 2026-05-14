@@ -6,14 +6,24 @@ required_fields:
 field_labels:
   - task
 description_template: |
-  ## Task Description
+  ## 🧾 Summary
+
   {description}
 
-  ## Background
-  {background}
+  ## ✅ Acceptance Criteria
 
-  ## Acceptance Criteria
   {acceptance_criteria}
 
-  ## Out of Scope
-  {out_of_scope}
+  ## 🔗 Dependencies
+
+  {dependencies}
+
+  ## 🏁 Definition of Done
+
+  - [ ] Task objective/scope is completed as defined
+  - [ ] Any related code/configuration is completed and reviewed
+  - [ ] Code is merged and builds successfully (if applicable)
+  - [ ] Relevant tests or validations are completed
+  - [ ] No outstanding issues or rework identified
+  - [ ] Documentation/configuration updated where required
+  - [ ] Outcome is verified by the assignee and/or reviewer

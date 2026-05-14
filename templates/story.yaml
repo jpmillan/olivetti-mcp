@@ -8,15 +8,41 @@ required_fields:
 field_labels:
   - story
 description_template: |
-  ## Summary
+  ## 🧾 User Story
+
   {description}
 
-  ## Background
-  {background}
+  ## ✅ Acceptance Criteria
 
-  ## Acceptance Criteria
   {acceptance_criteria}
 
-  ## Out of Scope
-  {out_of_scope}
+  ## ⚙ Non-Functional Requirements (if applicable)
+
+  {non_functional_requirements}
+
+  ## 🔗 Dependencies
+
+  {dependencies}
+
+  ## 🧪 UAT Requirement
+
+  {uat_requirement}
+
+  ## 🧪 Testing Notes
+
+  {testing_notes}
+
+  ## 👥 Target Users
+
+  {target_users}
+
+  ## 🏁 Definition of Done
+
+  - [ ] All acceptance criteria are met
+  - [ ] Code is reviewed, merged and builds successfully
+  - [ ] Tests are updated and passing (unit, integration, manual, functional/non-functional, UAT, test repository)
+  - [ ] No open critical or high-priority defects for this item
+  - [ ] Deployed to the agreed environment and accepted by the Product Owner or delegate
+  - [ ] Documentation/configuration updated where required
+  - [ ] Deployed to Production and PVT passed
 story_points_options: [1, 2, 3, 5, 8, 13]
