@@ -145,31 +145,35 @@ Replace the placeholder values:
 
 #### Global setup (all workspaces)
 
-If you want Olivetti available in **every** VS Code workspace without creating a `.vscode/mcp.json` in each project:
+If you want Olivetti available in **every** VS Code workspace without creating a `.vscode/mcp.json` in each project, use the **user-level MCP config file**:
 
-1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) and select **Preferences: Open User Settings (JSON)**.
-2. Add the `mcp` block at the top level of the JSON:
+1. Create (or edit) the file `~/.vscode/mcp.json`:
+   - **Windows:** `C:\Users\<YourUsername>\.vscode\mcp.json`
+   - **macOS:** `~/.vscode/mcp.json`
+   - **Linux:** `~/.vscode/mcp.json`
+
+2. Add the following content:
 
 ```json
 {
-  "mcp": {
-    "servers": {
-      "olivetti": {
-        "type": "stdio",
-        "command": "C:/absolute/path/to/olivetti-mcp.exe",
-        "env": {
-          "JIRA_BASE_URL": "https://yourteam.atlassian.net",
-          "JIRA_EMAIL": "you@example.com",
-          "JIRA_API_TOKEN": "your_api_token_here",
-          "JIRA_PROJECT_KEY": "DEV"
-        }
+  "servers": {
+    "olivetti": {
+      "type": "stdio",
+      "command": "C:/absolute/path/to/olivetti-mcp.exe",
+      "env": {
+        "JIRA_BASE_URL": "https://yourteam.atlassian.net",
+        "JIRA_EMAIL": "you@example.com",
+        "JIRA_API_TOKEN": "your_api_token_here",
+        "JIRA_PROJECT_KEY": "DEV"
       }
     }
   }
 }
 ```
 
-3. Save and reload VS Code.
+3. Save and reload VS Code (`Ctrl+Shift+P` → **Developer: Reload Window**).
+
+> **Important:** Do **not** put MCP server configs in your user `settings.json` — VS Code requires the dedicated `~/.vscode/mcp.json` file instead.
 
 > **Note:** If a workspace also has its own `.vscode/mcp.json` with an `olivetti` entry, the workspace-level config takes precedence over the user-level one for that workspace.
 
